@@ -14,10 +14,15 @@ function createSingleItem(item) {
       <i class="fa-regular fa-trash-can"></i>
     </button>
   `);
-  
+
   // Add event listener for checkbox
   $div.find('input[type="checkbox"]').on("change", function () {
     editCompleted(item.id);
+  });
+
+  // Add event listener for remove button
+  $div.find(".remove-btn").on("click", function () {
+    removeItem(item.id);
   });
 
   return $div;
